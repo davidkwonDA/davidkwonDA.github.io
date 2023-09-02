@@ -1,17 +1,12 @@
-var previous = window.pageYOffset;
-var elementTarget = document.getElementById("intro");
+var prevScrollpos = window.pageYOffset;
 window.onscroll = function() {
-  var current = window.pageYOffset;
-  if(window.scrollY < (elementTarget.offsetTop + elementTarget.offsetHeight)){
+  var currentScrollPos = window.pageYOffset;
+  if (prevScrollpos > currentScrollPos) {
     document.getElementById("navigation").style.top = "0";
-  } else if (previous > current) {
-    document.getElementById("navigation").style.top = "0";
-  } else if (current>previous){
-    document.getElementById("navigation").style.top = "-5vw";
+  } else {
+    document.getElementById("navigation").style.top = "-50px";
   }
-  
-  previous = current;
-  
+  prevScrollpos = currentScrollPos;
 }
 var background_image = document.getElementById("preview");
 var social_one = document.getElementById('social1');
@@ -32,7 +27,7 @@ document.getElementById("social1").onmouseout  = function() {
   social_two.setAttribute("style","");
   social_three.setAttribute("style","");
   social_four.setAttribute("style","");
-  background_image.style.backgroundImage = "url(image/Capture.PNG)";
+  background_image.style.backgroundImage = "none";
   background_image.style.border = "none";
   background_image.style.transition = "ease .1s";}
 
@@ -48,7 +43,7 @@ document.getElementById("social2").onmouseout  = function() {
   social_two.setAttribute("style","");
   social_three.setAttribute("style","");
   social_four.setAttribute("style","");
-  background_image.style.backgroundImage = "url(image/Capture.PNG)"; 
+  background_image.style.backgroundImage = "none"; 
   background_image.style.border = "none";
   background_image.style.transition = "ease .1s";}
 
@@ -64,7 +59,7 @@ document.getElementById("social3").onmouseout  = function() {
   social_two.setAttribute("style","");
   social_three.setAttribute("style","");
   social_four.setAttribute("style","");
-  background_image.style.backgroundImage = "url(image/Capture.PNG)"; 
+  background_image.style.backgroundImage = "none"; 
   background_image.style.border = "none";
   background_image.style.transition = "ease .1s";}
 
@@ -80,6 +75,6 @@ document.getElementById("social4").onmouseout  = function() {
   social_two.setAttribute("style","");
   social_three.setAttribute("style","");
   social_four.setAttribute("style","");
-  background_image.style.backgroundImage = "url(image/Capture.PNG)"; 
+  background_image.style.backgroundImage = "none"; 
   background_image.style.border = "none";
   background_image.style.transition = "ease .1s";}
